@@ -12,7 +12,7 @@ services:
       RAILS_SERVE_STATIC_FILES: "1"
       EDITOR: "vim"
     volumes:
-      - .:/tmp/var/www/tmp:cached
+      - .:/tmp/var/www:cached
       - /tmp/var/www/log
       - /tmp/var/www/.git
       - /tmp/var/www/.bundle
