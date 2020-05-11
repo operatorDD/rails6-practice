@@ -12,7 +12,11 @@ services:
       RAILS_SERVE_STATIC_FILES: "1"
       EDITOR: "vim"
     volumes:
-      - ./apps:/apps
+      - .:/tmp/var/www/tmp:cached
+      - /tmp/var/www/log
+      - /tmp/var/www/.git
+      - /tmp/var/www/.bundle
+      - /tmp/var/www/vendor/bundle
     ports:
       - "3000:3000"
       - "3035:3035"
