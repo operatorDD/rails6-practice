@@ -1,19 +1,24 @@
+AllCops:
+  Exclude:
+    - 'public/**/*'
+    - 'tmp/**/*'
+    - 'log/**/*'
+    - 'bin/**/*'
+    - 'vendor/**/*'
+    - 'node_modules/**/*'
+
 Bundler/OrderedGems:
   Exclude:
     - 'Gemfile'
 
 Layout/AccessModifierIndentation:
   Exclude:
-    - 'bin/bundle'
 
 Layout/ArgumentAlignment:
   Exclude:
-    - 'bin/webpack'
-    - 'bin/webpack-dev-server'
 
 Layout/EmptyLineAfterGuardClause:
   Exclude:
-    - 'bin/bundle'
 
 Layout/SpaceInsideArrayLiteralBrackets:
   Exclude:
@@ -52,38 +57,27 @@ Style/Documentation:
 
 Style/ExpandPathArguments:
   Exclude:
-    - 'bin/bundle'
-    - 'bin/rails'
-    - 'bin/rake'
 
 Style/FrozenStringLiteralComment:
   Enabled: false
 
 Style/IfUnlessModifier:
   Exclude:
-    - 'bin/bundle'
 
 Style/PerlBackrefs:
   Exclude:
-    - 'bin/bundle'
 
 Style/RedundantBegin:
   Exclude:
-    - 'bin/yarn'
 
 Style/SpecialGlobalVars:
   EnforcedStyle: use_perl_names
 
 Style/StderrPuts:
   Exclude:
-    - 'bin/yarn'
 
 Style/StringLiterals:
   Exclude:
-    - 'bin/bundle'
-    - 'bin/webpack'
-    - 'bin/webpack-dev-server'
-    - 'bin/yarn'
     - 'config/environments/production.rb'
     - 'config/puma.rb'
     - 'config/spring.rb'
