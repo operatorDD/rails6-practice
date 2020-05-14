@@ -10,3 +10,9 @@ Style/FrozenStringLiteralComment:
 
 Style/StringLiterals:
   Enabled: false
+
+Layout/IndentationConsistency:
+  EnforcedStyle: normal
+
+Layout/EmptyLinesAroundAccessModifier:
+  EnforcedStyle: around 
