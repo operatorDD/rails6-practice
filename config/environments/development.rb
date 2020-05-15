@@ -1,7 +1,8 @@
 Rails.application.configure do
   config.cache_classes = false
   config.eager_load = false
-  config.consider_all_requests_local = true
+  # NOTE: config/initializers/exceptions_app.rbで定義している処理を開発環境でも有効にするため
+  config.consider_all_requests_local = false
 
   if Rails.root.join('tmp', 'caching-dev.txt').exist?
     config.action_controller.perform_caching = true
