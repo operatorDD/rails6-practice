@@ -12,6 +12,7 @@ gem "turbolinks", "~> 5"
 gem "jbuilder", "~> 2.7"
 gem "activemodel"
 gem "pry-rails"
+gem 'devise'
 
 gem "bootsnap", ">= 1.4.2", require: false
 
