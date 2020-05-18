@@ -9,11 +9,11 @@ class AddDeviseToStaffMembers < ActiveRecord::Migration[6.0]
       t.string   :reset_password_token
       t.datetime :reset_password_sent_at
       t.string :family_name, null: false, comment: '姓'
-      t.string :given_name, null: false, commnet: '名'
+      t.string :given_name, null: false, comment: '名'
       t.string :family_name_kana, null: false, comment: '姓（カナ）'
-      t.string :given_name_kana, null: false, commnet: '名（カナ）'
+      t.string :given_name_kana, null: false, comment: '名（カナ）'
       t.date :start_date, null: false, comment: '開始日'
-      t.date :end_date, null: false, comment: '終了日'
+      t.date :end_date, comment: '終了日'
       t.boolean :suspended, null: false, default: false, comment: '無効フラグ'
       t.timestamps
     end

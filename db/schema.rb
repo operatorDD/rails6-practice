@@ -21,11 +21,11 @@ ActiveRecord::Schema.define(version: 2020_05_17_133701) do
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.string "family_name", null: false, comment: "姓"
-    t.string "given_name", null: false
+    t.string "given_name", null: false, comment: "名"
     t.string "family_name_kana", null: false, comment: "姓（カナ）"
-    t.string "given_name_kana", null: false
+    t.string "given_name_kana", null: false, comment: "名（カナ）"
     t.date "start_date", null: false, comment: "開始日"
-    t.date "end_date", null: false, comment: "終了日"
+    t.date "end_date", comment: "終了日"
     t.boolean "suspended", default: false, null: false, comment: "無効フラグ"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
