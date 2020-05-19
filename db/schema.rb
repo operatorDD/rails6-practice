@@ -27,6 +27,7 @@ ActiveRecord::Schema.define(version: 2020_05_17_133701) do
     t.date "start_date", null: false, comment: "開始日"
     t.date "end_date", comment: "終了日"
     t.boolean "suspended", default: false, null: false, comment: "無効フラグ"
+    t.datetime "remember_created_at"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index "lower((email)::text)", name: "index_staff_members_on_LOWER_email", unique: true

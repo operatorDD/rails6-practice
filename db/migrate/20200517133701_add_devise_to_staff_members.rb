@@ -15,6 +15,7 @@ class AddDeviseToStaffMembers < ActiveRecord::Migration[6.0]
       t.date :start_date, null: false, comment: '開始日'
       t.date :end_date, comment: '終了日'
       t.boolean :suspended, null: false, default: false, comment: '無効フラグ'
+      t.datetime :remember_created_at
       t.timestamps
     end
 
