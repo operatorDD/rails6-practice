@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
-  devise_for :staff_members
+  devise_for :staff
+
   namespace :staff do
     root 'top#index'
   end

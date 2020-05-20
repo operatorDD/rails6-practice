@@ -1,8 +1,8 @@
 # frozen_string_literal: true
 
-class AddDeviseToStaffMembers < ActiveRecord::Migration[6.0]
+class AddDeviseToStaffs < ActiveRecord::Migration[6.0]
   def self.up
-    create_table :staff_members do |t|
+    create_table :staffs do |t|
       ## Database authenticatable
       t.string :email,              null: false
       t.string :encrypted_password, null: false
@@ -19,11 +19,11 @@ class AddDeviseToStaffMembers < ActiveRecord::Migration[6.0]
       t.timestamps
     end
 
-    add_index :staff_members, 'LOWER(email)',                unique: true
-    add_index :staff_members, :reset_password_token, unique: true
-    add_index :staff_members, [ :family_name_kana, :given_name_kana ], unique: false
-    # add_index :staff_members, :confirmation_token,   unique: true
-    # add_index :staff_members, :unlock_token,         unique: true
+    add_index :staffs, 'LOWER(email)',                unique: true
+    add_index :staffs, :reset_password_token, unique: true
+    add_index :staffs, [ :family_name_kana, :given_name_kana ], unique: false
+    # add_index :staff, :confirmation_token,   unique: true
+    # add_index :staff, :unlock_token,         unique: true
   end
 
   def self.down
