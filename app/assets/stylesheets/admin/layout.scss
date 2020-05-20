@@ -17,10 +17,16 @@ header {
   padding: 5px;
   background-color: $ruby;
   color: $white;
+  header span.logo-mark {
+    font-weight: bold;
+  }
+  a {
+    float: right;
+    padding-right: 5px;
+    color: $white;
+  }
 }
-header span.logo-mark {
-  font-weight: bold;
-}
+
 footer {
   bottom: 0;
   position: absolute;
