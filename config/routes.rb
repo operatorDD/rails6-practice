@@ -1,18 +1,18 @@
 Rails.application.routes.draw do
   # devise_for :staff
-  devise_for :staff, path: 'staffs', controllers: { sessions: 'staff/sessions' }
-  devise_for :admin
+  devise_for :staffs, path: 'staffs', controllers: { sessions: 'staffs/sessions' }
+  devise_for :admins
 
-  namespace :staff do
+  namespace :staffs do
     root 'top#index'
     
   end
 
-  namespace :admin do
+  namespace :admins do
     root 'top#index'
   end
 
-  namespace :customer do
+  namespace :customers do
     root 'top#index'
   end
 end
