@@ -15,4 +15,14 @@ class ApplicationController < ActionController::Base
       'customers'
     end
   end
+
+  def after_sign_in_path_for(resource)
+    if resource.is_a?(Admin)
+      admins_root_path
+    elsif resource.is_a?(Staff)
+      staffs_root_path
+    elsif resource.is_a?(Customer)
+      customers_root_path
+    end
+  end
 end
