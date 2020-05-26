@@ -1,6 +1,9 @@
 <div id='login-form'>
   <h1><%= 'スタッフログイン' %></h1>
   <%= form_with model: @staff, url: :new_staff_session, local: true do |f| %>
+    <%- flash.each do |msg_type, msg| -%>
+      <%= content_tag :div, msg, class: msg_type %>
+    <%- end -%>
     <div>
       <%= f.label :email, 'メールアドレス' %>
       <%= f.email_field :email, autocomplete: 'email' %>
