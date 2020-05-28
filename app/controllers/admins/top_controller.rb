@@ -1,5 +1,9 @@
 class Admins::TopController < ApplicationController
   def index
-    render action: 'index'
+    if current_admin
+      render action: 'dashboard'
+    else
+      render action: 'index'
+    end
   end
 end
