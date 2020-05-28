@@ -4,6 +4,7 @@ Rails.application.routes.draw do
 
   namespace :staffs do
     root 'top#index'
+    resource :account, except: %i[new create destroy]
   end
 
   namespace :admins do
