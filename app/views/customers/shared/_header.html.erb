@@ -1,7 +1,7 @@
 <header>
   <span class='logo-mark'>BAUKIS2</span>
   <%=
-    if current_admin
+    if current_customer
       link_to 'ログアウト', :destroy_customer_session, method: :delete
     else
       link_to 'ログイン', :new_customer_session
