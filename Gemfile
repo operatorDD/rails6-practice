@@ -15,6 +15,9 @@ gem "pry-rails"
 gem 'devise'
 
 gem "bootsnap", ">= 1.4.2", require: false
+gem 'uglifier'
+gem 'jquery-rails'
+gem 'bootstrap'
 
 gem "bcrypt", "~> 3.1.7"
 gem "rails-i18n"
