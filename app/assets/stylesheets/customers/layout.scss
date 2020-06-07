@@ -18,7 +18,9 @@ header {
   padding: 5px;
   background-color: $antique_gold;
   color: $white;
-  header span.logo-mark {
+  a.logo-mark {
+    float: none;
+    text-decoration: none;
     font-weight: bold;
   }
   a {
