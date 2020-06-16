@@ -1,5 +1,5 @@
 class Admins::StaffsController < ApplicationController
-  before_action :set_staff, only: %i[show edit update]
+  before_action :set_staff, only: %i[show edit update destroy]
 
   def index
     @staffs = Staff.order(:family_name_kana, :given_name_kana)
@@ -29,6 +29,14 @@ class Admins::StaffsController < ApplicationController
       redirect_to :admins_staffs
     else
       render action: 'edit'
+    end
+  end
+
+  def destroy
+    if @staff.destroy
+      redirect_to :admins_staffs
+    else
+      # TODO: 登録失敗エラー出力
     end
   end
 
