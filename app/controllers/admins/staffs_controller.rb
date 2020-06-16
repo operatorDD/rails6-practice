@@ -1,5 +1,5 @@
 class Admins::StaffsController < ApplicationController
-  before_action :set_staff, only: %i[show edit]
+  before_action :set_staff, only: %i[show edit update]
 
   def index
     @staffs = Staff.order(:family_name_kana, :given_name_kana)
@@ -16,11 +16,19 @@ class Admins::StaffsController < ApplicationController
   def edit; end
 
   def create
-    @staff = Staff.new(params[:staff])
+    @staff = Staff.new(staff_params)
     if @staff.save
       redirect_to :admins_staffs
     else
-      render action: "new"
+      render action: 'new'
+    end
+  end
+
+  def update
+    if @staff.update(staff_params)
+      redirect_to :admins_staffs
+    else
+      render action: 'edit'
     end
   end
 
@@ -31,10 +39,7 @@ class Admins::StaffsController < ApplicationController
   end
 
   def staff_params
-    params.require(:staff)
-          .permit(
-            :email, :password, :family_name, :given_name, :family_name_kana, :given_name_kana,
-            :start_date
-          )
+    params.require(:staff).permit(:email, :password, :family_name, :given_name, :family_name_kana,
+                                  :given_name_kana, :start_date, :suspended)
   end
 end
