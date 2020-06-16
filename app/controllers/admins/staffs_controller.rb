@@ -29,4 +29,12 @@ class Admins::StaffsController < ApplicationController
   def set_staff
     @staff = Staff.find_by(id: params[:id])
   end
+
+  def staff_params
+    params.require(:staff)
+          .permit(
+            :email, :password, :family_name, :given_name, :family_name_kana, :given_name_kana,
+            :start_date
+          )
+  end
 end
