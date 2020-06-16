@@ -16,20 +16,20 @@
       <th>アクション</th>
     </tr>
     <% @staffs.each do |staff| %>
-      <tr>
-        <td><%= staff.family_name %> <%= staff.given_name %></td>
-        <td><%= staff.family_name_kana %> <%= staff.given_name_kana %></td>
-        <td><%= staff.email %></td>
-        <td class='date'><%= staff.start_date.strftime('%Y/%m/%d') %></td>
-        <td class='date'><%= staff.end_date&.strftime('%Y/%m/%d') %></td>
-        <td class='boolean'>
-          <%= staff.suspended? ? raw('&#x2611') : raw('&#x2610') %>
-        </td>
-        <td class='actions'>
-          <%= link_to '編集', [ :edit, :admins, staff ] %> |
-          <%= link_to '削除', [ :admins, staff ], method: :delete, data: { confirm: '本当に削除しますか？ ' } %>
-        </td>
-      </tr>
+    <tr>
+      <td><%= staff.family_name %> <%= staff.given_name %></td>
+      <td><%= staff.family_name_kana %> <%= staff.given_name_kana %></td>
+      <td><%= staff.email %></td>
+      <td class='date'><%= staff.start_date.strftime('%Y/%m/%d') %></td>
+      <td class='date'><%= staff.end_date&.strftime('%Y/%m/%d') %></td>
+      <td class='boolean'>
+        <%= staff.suspended? ? raw('&#x2611') : raw('&#x2610') %>
+      </td>
+      <td class='actions'>
+        <%= link_to '編集', [ :edit, :admins, staff ] %> |
+        <%= link_to '削除', [ :admins, staff ], method: :delete, data: { confirm: '本当に削除しますか？ ' } %>
+      </td>
+    </tr>
     <% end %>
   </table>
 
