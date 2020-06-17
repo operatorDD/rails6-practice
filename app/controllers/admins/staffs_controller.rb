@@ -1,4 +1,4 @@
-class Admins::StaffsController < ApplicationController
+class Admins::StaffsController < Admins::BaseController
   before_action :set_staff, only: %i[show edit update destroy]
 
   def index
