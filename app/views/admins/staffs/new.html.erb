@@ -3,6 +3,11 @@
 
 <div id="generic-form">
   <%= form_with model: @staff, url: [ :admins, @staff ] do |f| %>
+    <% if @staff.errors.full_messages.present? %>
+      <% @staff.errors.full_messages.each do |error_msg| %>
+        <li><%= error_msg %></li>
+      <% end %>
+    <% end %>
     <%= render "form", f: f %>
     <div class="buttons">
       <%= f.submit "登録" %>
