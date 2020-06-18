@@ -1,5 +1,3 @@
-
-
 class Admins::TopController < Admins::BaseController
   skip_before_action :admin_user?
 

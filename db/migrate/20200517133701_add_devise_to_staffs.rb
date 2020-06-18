@@ -21,7 +21,7 @@ class AddDeviseToStaffs < ActiveRecord::Migration[6.0]
 
     add_index :staffs, 'LOWER(email)',                unique: true
     add_index :staffs, :reset_password_token, unique: true
-    add_index :staffs, [ :family_name_kana, :given_name_kana ], unique: false
+    add_index :staffs, %i[family_name_kana given_name_kana], unique: false
     # add_index :staff, :confirmation_token,   unique: true
     # add_index :staff, :unlock_token,         unique: true
   end

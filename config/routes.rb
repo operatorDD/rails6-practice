@@ -18,7 +18,6 @@ Rails.application.routes.draw do
     end
   end
 
-  
   constraints host: config[:customers][:host] do
     namespace :customers, path: config[:customers][:path] do
       root 'top#index'

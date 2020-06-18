@@ -1,18 +1,125 @@
-inherit_gem:
-  rubocop-rails_config:
-    - config/rails.yml
 
 AllCops:
-  TargetRubyVersion: 2.6.4
+  Exclude:
+    - 'db/schema.rb'
+    - 'bin/**/*'
+    - 'node_modules/**/*'
 
-Style/FrozenStringLiteralComment:
+## `and return` の形式を利用できるようにします。基本的には、&& と || を使います。
+Style/AndOr:
   Enabled: false
 
-Style/StringLiterals:
+## 日本語コメントを許可します。
+Style/AsciiComments:
   Enabled: false
 
 Layout/IndentationConsistency:
   EnforcedStyle: normal
 
-Layout/EmptyLinesAroundAccessModifier:
-  EnforcedStyle: around 
+Layout/CommentIndentation:
+  Enabled: false
+
+# https://rubocop.readthedocs.io/en/stable/cops_layout/#layoutemptylinesaroundattributeaccessor
+Layout/EmptyLinesAroundAttributeAccessor:
+  Enabled: true
+
+# https://rubocop.readthedocs.io/en/stable/cops_layout/#layoutspacearoundmethodcalloperator
+Layout/SpaceAroundMethodCallOperator:
+  Enabled: true
+
+# https://rubocop.readthedocs.io/en/stable/cops_lint/#lintraiseexception
+Lint/RaiseException:
+  Enabled: true
+
+# https://rubocop.readthedocs.io/en/stable/cops_lint/#lintstructnewoverride
+Lint/StructNewOverride:
+  Enabled: true
+
+Layout/LineLength:
+  Max: 150
+  Exclude:
+    - 'config/**/*'
+
+Metrics/AbcSize:
+  Exclude:
+    - 'lib/tasks/dev.rake'
+    - 'db/migrate/*.rb'
+
+Metrics/BlockLength:
+  CountComments: false
+  Exclude:
+    - 'Guardfile'
+    - 'config/routes.rb'
+    - 'spec/**/*'
+    - 'app/views/**/*.jbuilder'
+    - 'lib/tasks/dev.rake'
+    - 'db/migrate/*.rb'
+
+Metrics/ClassLength:
+  CountComments: false
+
+Metrics/MethodLength:
+  CountComments: false
+  Max: 15
+  Exclude:
+    - 'lib/tasks/dev.rake'
+    - 'db/migrate/*.rb'
+
+Metrics/ModuleLength:
+  CountComments: false
+
+Naming/FileName:
+  Exclude:
+    - 'Gemfile'
+    - 'Guardfile'
+
+Naming/MethodParameterName:
+  AllowedNames: [e]
+
+Style/BlockComments:
+  Exclude:
+    - 'spec/spec_helper.rb'
+
+# https://rubocop.readthedocs.io/en/stable/cops_style/#styleblockdelimiters
+Style/BlockDelimiters:
+  EnforcedStyle: braces_for_chaining
+  Exclude:
+    - 'spec/**/*'
+
+Style/ClassAndModuleChildren:
+  Enabled: false
+
+Style/Documentation:
+  Enabled: false
+
+# https://rubocop.readthedocs.io/en/stable/cops_style/#styleexponentialnotation
+Style/ExponentialNotation:
+  Enabled: true
+
+# https://rubocop.readthedocs.io/en/stable/cops_style/#stylehasheachmethods
+Style/HashEachMethods:
+  Enabled: true
+
+# https://rubocop.readthedocs.io/en/stable/cops_style/#stylehashtransformkeys
+Style/HashTransformKeys:
+  Enabled: true
+
+# https://rubocop.readthedocs.io/en/stable/cops_style/#stylehashtransformvalues
+Style/HashTransformValues:
+  Enabled: true
+
+Style/IfUnlessModifier:
+  Enabled: false
+
+Style/Lambda:
+  EnforcedStyle: literal
+
+Style/RegexpLiteral:
+  Enabled: false
+
+# https://rubocop.readthedocs.io/en/stable/cops_style/#styleslicingwithrange
+Style/SlicingWithRange:
+  Enabled: true
+
+Style/FrozenStringLiteralComment:
+  Enabled: false

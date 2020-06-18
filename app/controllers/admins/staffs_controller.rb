@@ -6,7 +6,7 @@ class Admins::StaffsController < Admins::BaseController
   end
 
   def show
-    redirect_to [ :edit, :admins, @staff ]
+    redirect_to [:edit, :admins, @staff]
   end
 
   def new
@@ -36,7 +36,7 @@ class Admins::StaffsController < Admins::BaseController
     if @staff.destroy
       redirect_to :admins_staffs
     else
-      # TODO: 登録失敗エラー出力
+      flash[:alert] = '職員削除に失敗しました。'
     end
   end
 
