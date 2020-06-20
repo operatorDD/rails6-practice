@@ -14,7 +14,7 @@ class Staffs::BaseController < ApplicationController
   def check_invalid_acount
     return unless current_staff && invalid_staff?
 
-    session.delete(:staff_id)
+    sign_out
     flash[:alert] = 'アカウントが無効になりました。'
     redirect_to :staffs_root
   end
@@ -22,6 +22,6 @@ class Staffs::BaseController < ApplicationController
   def invalid_staff?
     start_date = current_staff.start_date
     end_date = current_staff.end_date
-    start_date >= Date.today && end_date < Date.today
+    (start_date >= Date.today || end_date < Date.today) || current_staff.suspended?
   end
 end
