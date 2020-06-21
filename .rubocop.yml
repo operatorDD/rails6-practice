@@ -41,6 +41,7 @@ Layout/LineLength:
     - 'config/**/*'
 
 Metrics/AbcSize:
+  Max: 20
   Exclude:
     - 'lib/tasks/dev.rake'
     - 'db/migrate/*.rb'
