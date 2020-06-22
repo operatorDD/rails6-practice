@@ -27,6 +27,7 @@
       </td>
       <td class='actions'>
         <%= link_to '編集', [ :edit, :admins, staff ] %> |
+        <%= link_to 'イベント記録', [ :admins, staff, :staff_event_histories ] %> |
         <%= link_to '削除', [ :admins, staff ], method: :delete, data: { confirm: '本当に削除しますか？ ' } %>
       </td>
     </tr>

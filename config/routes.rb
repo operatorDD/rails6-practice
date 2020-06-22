@@ -14,7 +14,10 @@ Rails.application.routes.draw do
   constraints host: config[:admins][:host] do
     namespace :admins, path: config[:admins][:path] do
       root 'top#index'
-      resources :staffs
+      resources :staffs do
+        resources :staff_event_histories, only: :index
+      end
+      resources :staff_event_histories, only: :index
     end
   end
 
