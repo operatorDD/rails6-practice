@@ -2,7 +2,7 @@ class Admins::StaffsController < Admins::BaseController
   before_action :set_staff, only: %i[show edit update destroy]
 
   def index
-    @staffs = Staff.order(:family_name_kana, :given_name_kana)
+    @staffs = Staff.order(:family_name_kana, :given_name_kana).page(params[:page])
   end
 
   def show
