@@ -13,6 +13,8 @@
     <%= link_to "職員一覧", :admins_staffs %>
   </div>
 
+  <%= paginate @event_histories %>
+
   <table class="listing">
     <tr>
       <% unless @staff %><th>氏名</th><% end %>
@@ -27,6 +29,8 @@
       </tr>
     <% end %>
   </table>
+
+  <%= paginate @event_histories %>
 
   <div class="links">
     <%= link_to "職員一覧", :admins_staffs %>

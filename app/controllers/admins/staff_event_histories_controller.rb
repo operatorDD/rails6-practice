@@ -6,5 +6,6 @@ class Admins::StaffEventHistoriesController < Admins::BaseController
     else
       @event_histories = StaffEventHistory.order_created_desc
     end
+    @event_histories = @event_histories.page(params[:page])
   end
 end
