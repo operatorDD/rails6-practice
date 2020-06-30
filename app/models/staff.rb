@@ -1,5 +1,5 @@
 class Staff < ApplicationRecord
-  incldue StringNormalizer
+  include StringNormalizer
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
@@ -14,9 +14,14 @@ class Staff < ApplicationRecord
     self.given_name_kana = normalize_as_furigana(given_name_kana)
   end
 
-  KATAKANA_REGEXP = /\A[\p{katakana}\u{30fc}]+\z/
+  KATAKANA_REGEXP = /\A[\p{katakana}\u{30fc}]+\z/.freeze
 
   validates :family_name, :given_name, presence: true
   validates :family_name_kana, :given_name_kana, presence: true,
-    format: { with: KATAKANA_REGEXP, allow_blank: true }
+                                                 format: { with: KATAKANA_REGEXP, allow_blank: true }
+  validates :start_date, presence: true, date: {
+    after_or_equal_to: Date.new(2000, 1, 1),
+    before: ->(_obj) { 1.year.from_now.to_date },
+    allow_blank: true
+  }
 end
