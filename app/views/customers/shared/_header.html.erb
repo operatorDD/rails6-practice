@@ -1,0 +1,10 @@
+<header>
+  <%= link_to "BAUKIS2", :customers_root, class: "logo-mark" %>
+  <%=
+    if current_customer
+      link_to 'ログアウト', :destroy_customer_session, method: :delete
+    else
+      link_to 'ログイン', :new_customer_session
+    end
+  %>
+</header>

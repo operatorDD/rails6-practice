@@ -1,0 +1,13 @@
+<tr>
+  <% unless @staff %>
+  <td>
+    <%= link_to(event_history.staff.family_name + event_history.staff.given_name,
+      [ :admins, event_history.staff, :staff_event_histories ]) %>
+  </td>
+  <% end %>
+  <td><%= event_history.event %></td>
+  <td><%= event_history.ip_address %></td>
+  <td class="date">
+    <%= event_history.created_at.strftime("%Y/%m/%d %H:%M:%S") %>
+  </td>
+</tr>

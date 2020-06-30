@@ -1,0 +1,14 @@
+ja:
+  activerecord:
+    models:
+      staff: 職員
+    attributes:
+      staff: 
+        email: メールアドレス
+        password: パスワード
+        family_name: 姓
+        given_name: 名
+        family_name_kana: 姓(カナ)
+        given_name_kana: 名(カナ)
+        start_date: 入社日
+        suspended: アカウント中止

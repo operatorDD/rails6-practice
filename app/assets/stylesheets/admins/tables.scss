@@ -1,0 +1,35 @@
+@import 'colors';
+
+div.table-wrapper {
+  width: 80%;
+  margin: 0 auto;
+
+  div.links {
+    text-align: right;
+    padding: 6px;
+  }
+
+  table {
+    margin: 6px auto 0;
+    border: solid 6px $ruby;
+    tr {
+      th {
+        background-color: gray;
+        color: white;
+      }
+      th, td { padding: 2px }
+      td.email, td.date { font-family: monospace; }
+      td.boolean { text-align: center; }
+      td.actions {
+        text-align: center;
+        color: lightgray;
+      }
+    }
+  }
+
+  table.listing {
+    width: 100%;
+    tr:nth-child(even) { background-color: lightgray; }
+    tr:nth-child(odd) { background-color: darkgray; }
+  }
+}

@@ -1,0 +1,10 @@
+<header>
+  <%= link_to "BAUKIS2", :admins_root, class: "logo-mark" %>
+  <%=
+    if current_admin
+      link_to 'ログアウト', :destroy_admin_session, method: :delete
+    else
+      link_to 'ログイン', :new_admin_session
+    end
+  %>
+</header>
