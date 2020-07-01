@@ -39,4 +39,38 @@ RSpec.describe Staff, type: :model do
       end
     end
   end
+
+  describe '正規化' do
+    context 'emailの前後に全角空白が含まれている場合' do
+      it '空白は削除される' do
+        staff = FactoryBot.create(:staff, email: "\u{3000}test@example.com\u{3000}")
+
+        expect(staff.email).to eq('test@example.com')
+      end
+    end
+
+    context 'emailに全角文字が含まれている場合' do
+      it '半角に変換される' do
+        staff = FactoryBot.create(:staff, email: 'ｔest＠ｅxample.com')
+
+        expect(staff.email).to eq('test@example.com')
+      end
+    end
+
+    context 'family_name_kanaがひらがなで入力された場合' do
+      it 'カタカナに変換される' do
+        staff = FactoryBot.create(:staff, family_name_kana: 'かたかな')
+
+        expect(staff.family_name_kana).to eq('カタカナ')
+      end
+    end
+
+    context 'family_name_kanaが半角カタカナで入力された場合' do
+      it '全角カタカナに変換される' do
+        staff = FactoryBot.create(:staff, family_name_kana: 'ｶﾀｶﾅ')
+
+        expect(staff.family_name_kana).to eq('カタカナ')
+      end
+    end
+  end
 end
