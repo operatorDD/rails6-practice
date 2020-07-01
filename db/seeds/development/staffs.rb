@@ -1,9 +1,11 @@
-Staff.create!(
-  email: 'taro@example.com',
-  family_name: '山田',
-  given_name: '太郎',
-  family_name_kana: 'ヤマダ',
-  given_name_kana: 'タロウ',
-  password: 'password',
-  start_date: Date.today
-)
+100.times do |i|
+  Staff.create(
+    email: "abc#{i}@gmail.com",
+    password: '123456',
+    family_name: "Apple#{i}",
+    given_name: "Pen#{i}",
+    family_name_kana: "apple#{i}",
+    given_name_kana: "pen#{i}",
+    start_date: Date.today - i
+  )
+end
